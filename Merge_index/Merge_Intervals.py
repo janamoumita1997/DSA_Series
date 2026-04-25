@@ -20,29 +20,18 @@ Output: [[1,7]]
 Explanation: Intervals [1,4] and [4,7] are considered overlapping.
 """
 
-intervals = [[1,3],[2,6],[8,10],[15,18]]
+intervals = [[4,7],[5,7]]
 
-from typing import List
 
-class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        # Check if intervals list is empty
-        if not intervals:
-            return []
-        
-        # Sort intervals based on the start time
-        intervals.sort(key=lambda x: x[0])
-        
-        merged: List[List[int]] = [intervals[0]]
-        
-        # Iterate through each interval
-        for current in intervals[1:]:
-            last = merged[-1]
-            
-            # If the current interval overlaps with the last one in merged, merge them
-            if current[0] <= last[1]:
-                last[1] = max(last[1], current[1])
-            else:
-                merged.append(current)
+if not intervals:
+    print([])
+intervals.sort(key = lambda x:x[0])
+non_overlaping_lst = [intervals[0]]
 
-        return merged
+for current in intervals[1:]:
+    last = non_overlaping_lst[-1]
+    if current[0]<= last[1]:
+        last[1] = max(current[1],last[1])
+    else:
+        non_overlaping_lst.append(current)
+print(non_overlaping_lst)
