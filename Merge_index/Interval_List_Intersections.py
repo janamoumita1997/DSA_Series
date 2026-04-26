@@ -7,15 +7,22 @@ A closed interval [a, b] (with a <= b) denotes the set of real numbers x with a 
 
 The intersection of two closed intervals is a set of real numbers that are either empty or represented as a closed interval. For example, the intersection of [1, 3] and [2, 4] is [2, 3].
 """
-firstList = [[1,3],[5,9]]
-secondList = []
+firstList = []
+secondList = [[1,5],[8,12],[15,24],[25,26]]
 
 
-overlap = []
-n = len(secondList)
-for i in range(n):
-    if firstList[i][0] <= secondList[i][0] <= secondList[i][1]:
-        overlap.append([secondList[i][0],firstList[i][1]])
-    if i < n-1 and secondList[i][1] == firstList[i+1][0]:
-        overlap.append([secondList[i][1],secondList[i][1]])
-print(overlap)
+res = []
+i,j = 0,0
+while i < len(firstList) and j < len(secondList):
+    start = max(firstList[i][0], secondList[j][0])
+    end = min(firstList[i][1], secondList[j][1])
+
+    if start <= end:
+        res.append([start,end])
+    
+    if firstList[i][1] < secondList[j][1]:
+        i += 1
+    else:
+        j += 1
+
+print(res)
