@@ -15,3 +15,14 @@ Explanation: The balloons can be burst by 2 arrows:
 - Shoot an arrow at x = 6, bursting the balloons [2,8] and [1,6].
 - Shoot an arrow at x = 11, bursting the balloons [10,16] and [7,12].
 """
+def findMinArrowShots(self, points: List[List[int]]) -> int:
+    points.sort(key = lambda x: x[1])
+
+    arrow = 1
+    arrow_pos = points[0][1]
+    
+    for start,end in points:
+        if start > arrow_pos:
+            arrow += 1
+            arrow_pos = end
+    return arrow
