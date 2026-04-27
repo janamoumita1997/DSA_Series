@@ -44,11 +44,50 @@ arr = [-4, 3, -9, 0, 4, 1]
 # for i in range(1,n+1):
 #     print(f"{' '*(n-i)}{"#"*i}")
 
-arr = [73,67,38,33]
-for i in arr:
-    if i>= 38 and (i%5)>=3:
-        print(i + (5-(i%5)))
+# arr = [73,67,38,33]
+# for i in arr:
+#     if i>= 38 and (i%5)>=3:
+#         print(i + (5-(i%5)))
+#     else:
+#         print(i)
+
+# # minimum window sort
+# arr = [5, 6, 4, 8, 12, 9, 10, 15]
+# n = len(arr)
+# i,j = 0, n-1
+# while i < n-1 and arr[i+1] >= arr[i]:
+#     i += 1
+# if i == n-1:
+#     print(0)
+# while j>0 and arr[j-1] <= arr[j]:
+#     j -= 1
+
+# min_val = min(arr[i:j+1])
+# max_val = max(arr[i:j+1])
+
+# while i>0 and arr[i-1] > min_val:
+#     i -= 1
+# while j < n-1 and arr[j+1] < max_val:
+#     j += 1
+# print(i,j)
+# print(j-i +1)
+
+arr = [2,0,2,1,1,0]
+n = len(arr)
+i,m, j = 0, 0, n-1
+while m <= j:
+    if arr[m] == 1:
+        m += 1
+    elif arr[m] == 0:
+        temp = arr[i]
+        arr[i] = arr[m]
+        arr[m] = temp
+        m += 1
+        i += 1
     else:
-        print(i)
+        temp = arr[j]
+        arr[j] = arr[m]
+        arr[m] = temp
 
-
+        j -= 1
+print(arr)
