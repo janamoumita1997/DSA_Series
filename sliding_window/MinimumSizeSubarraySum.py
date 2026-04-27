@@ -17,4 +17,4 @@ Example 3:
 Input: target = 11, nums = [1,1,1,1,1,1,1,1]
 Output: 0
 """
-nums = []
+nums = [1,1,1,1,1,1,1,1]
