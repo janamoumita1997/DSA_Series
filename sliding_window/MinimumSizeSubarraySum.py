@@ -17,4 +17,18 @@ Example 3:
 Input: target = 11, nums = [1,1,1,1,1,1,1,1]
 Output: 0
 """
-nums = [1,1,1,1,1,1,1,1]
+arr = [1,4,4]
+target = 4
+
+n = len(arr)
+l = 0
+current_sum = 0
+count = float('inf')
+for r in range(n):
+    current_sum += arr[r]
+    while current_sum >= target:
+        count = min(count,r-l+1)
+        current_sum -= arr[l]
+        l += 1
+res = count if count != float("inf") else 0
+print(res)
