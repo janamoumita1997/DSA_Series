@@ -36,4 +36,17 @@ class Solution:
             max_count = max(max_count,r-l+1)
         return max_count
     
-print(Solution().maxConsecutiveOnes(nums,k))
+# print(Solution().maxConsecutiveOnes(nums,k))
+
+
+# count only consecutive ones
+nums = [1,1,0,1,1,0]
+n = len(nums)
+max_count = 0
+l = 0
+
+for r in range(n):
+    while nums[r] == 0 and l <= r:
+        l += 1
+    max_count = max(max_count, r-l+1)
+print(max_count)
