@@ -14,19 +14,34 @@ Example 2:
 Input: nums = [1,2,3], k = 3
 Output: 2
 """
+# nums = [1,-1,0]
+# k = 0
+
+# count = 0
+# n = len(nums)
+# for i in range(1,n):
+#     nums[i] += nums[i-1]
+
+# nums = [0] + nums
+# seen_list  = {0:1}
+# for i,val in enumerate(nums):
+#     if (val - k) in seen_list:
+#         count += 1
+#     seen_list[val] = seen_list.get(val,0) + 1
+# print(count)
+
+
+
 nums = [1,-1,0]
 k = 0
 
 count = 0
-n = len(nums)
-for i in range(1,n):
-    nums[i] += nums[i-1]
+prefix_sum = {0:1}
+current_sum = 0
 
-nums = [0] + nums
-seen_list  = {0:0}
-for i,val in enumerate(nums):
-    if (val - k) in seen_list:
-        count += 1
-    seen_list[val] = i
+for num in nums:
+    current_sum += num
+    if current_sum - k in prefix_sum:
+        count += prefix_sum[current_sum - k]
+    prefix_sum[current_sum] = prefix_sum.get(current_sum,0) + 1
 print(count)
-
