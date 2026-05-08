@@ -20,7 +20,7 @@ def dayOfProgrammer(year):
 def bonAppetit(bill, k, b):
     # Write your code here
     del bill[k]
-    if abs(sum(bill)/2 - b) >0:
+    if abs(sum(bill)/2 - b) > 0:
         return int(abs(sum(bill)/2 - b))
     else:
         return "Bon Appetit"
