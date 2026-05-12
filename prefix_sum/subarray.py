@@ -38,7 +38,7 @@ def shortestSubarray(nums: List[int], k: int) -> int:
     return result if result < n+1 else -1
 
 nums = [84,-37,32,40,95]
-k = 167
+k = 168
 
 print(shortestSubarray(nums,k))
 
