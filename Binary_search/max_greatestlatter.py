@@ -25,12 +25,7 @@ Explanation: There are no characters in letters that is lexicographically greate
 letters = ["c","f","j"]
 target = "a"
 
-# ascii_val = list(map(ord,letters))
-# target = list(map(ord,target))
-# print(ascii_val,target)
 
-# ascii_val = [99, 102, 106] 
-# x = 97
 def max_greater(letters,target):
     letters = list(dict.fromkeys(letters))
     print(letters)
