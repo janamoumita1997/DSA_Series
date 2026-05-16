@@ -23,7 +23,7 @@ Output: "x"
 Explanation: There are no characters in letters that is lexicographically greater than 'z' so we return letters[0]."""
 
 letters = ["c","f","j"]
-target = "j"
+target = "a"
 
 # ascii_val = list(map(ord,letters))
 # target = list(map(ord,target))
@@ -32,12 +32,15 @@ target = "j"
 # ascii_val = [99, 102, 106] 
 # x = 97
 def max_greater(letters,target):
+    letters = list(dict.fromkeys(letters))
+    print(letters)
     l = 0
     n = len(letters)
     h = n-1
+
     while l<=h:
         mid = (l+h)//2
-        if ord(letters[mid]) == ord(target):
+        if ord(letters[mid]) == ord(target) and mid < n-2:
             return (letters[mid+1]) 
         elif ord(letters[mid]) > ord(target):
             h = mid - 1
