@@ -1,6 +1,6 @@
-bloomday = [7,7,7,7,12,7,7]
-m = 2
-k = 3
+bloomday = [1,10,3,10,2]
+m = 3
+k = 1
 
 # def count_bouquets(bloomday,days,k):
 #     garden = [i if i <= days else 0 for i in bloomday]
@@ -21,7 +21,7 @@ def count_bouquets(bloomday,days,k):
     flower = 0
 
     for bloom in bloomday:
-        if bloom >= days:
+        if bloom <= days:
             flower += 1
         else:
             flower = 0
