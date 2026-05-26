@@ -13,3 +13,34 @@ Input: candies = [5,8,6], k = 3
 Output: 5
 Explanation: We can divide candies[1] into 2 piles of size 5 and 3, and candies[2] into 2 piles of size 5 and 1. We now have five piles of candies of sizes 5, 5, 3, 5, and 1. We can allocate the 3 piles of size 5 to 3 children. It can be proven that each child cannot receive more than 5 candies.
 """
+
+candies = [4,7,5]
+k = 4
+
+
+def can_dist(candies, k, mid):
+    count = 0
+    for i in candies:
+        res = i//mid
+        count += res
+        if count >= k:
+            return True
+    return False
+
+# print(can_dist(candies, k, mid))
+def max_candies(candies,k):
+
+    left = 1
+    right = max(candies)
+    res = 0
+
+    while left <=right:
+        mid = (left + right)//2
+        if can_dist(candies, k, mid):
+            res = mid
+            left = mid + 1
+        else:
+            right = mid - 1
+    return res
+
+print(max_candies(candies,k))
