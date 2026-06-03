@@ -22,9 +22,9 @@ def find_peak_in_2D(mat):
         if mat[max_row][mid]>= left and mat[max_row][mid]>= right:
             return [max_row,mid]
         elif right >  mat[max_row][mid]:
-            left = mid + 1
+            low = mid + 1
         else:
-            right = mid - 1
+            high = mid - 1
     return [-1,-1]
 
 print(find_peak_in_2D(mat))
