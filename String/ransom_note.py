@@ -10,10 +10,10 @@ def main(magazine, ransomNote):
         if j not in magazine_words:
             return False
         else:
-            if magazine_words[j]>0:
-                magazine_words[j] -= 1
-            else:
-                return False
+            magazine_words[j] -= 1
+            
+        if magazine_words[j] == 0:
+            del magazine_words[j]
     return True
 
 
