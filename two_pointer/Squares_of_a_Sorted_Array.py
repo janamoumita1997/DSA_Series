@@ -16,7 +16,7 @@ Input: nums = [-7,-3,2,3,11]
 Output: [4,9,9,49,121]
 
 """
-nums = []
+nums =  [-5,-3,-2,-1]
 def find_square_of_soted_ar(nums):
     n = len(nums)
     if n == 1:
