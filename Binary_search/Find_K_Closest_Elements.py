@@ -25,17 +25,13 @@ def findKCloset_ele(arr,k,x):
     
         count = 0
         while count < k:
-            if l < 0:
-               
+            if l < 0: 
                 r += 1
             elif r >= len(arr):
-               
                 l -= 1
             if abs(arr[l] - x) <= abs(arr[r] - x):
-                
                 l -= 1
-            else:
-                 
+            else: 
                  r += 1
             count  += 1
       
