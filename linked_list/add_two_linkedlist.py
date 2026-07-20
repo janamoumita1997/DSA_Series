@@ -14,7 +14,7 @@ def add_two_ll(l1,l2):
     inhand = 0
     while l1 or l2:
         
-        add_val = l1.val if l1 else 0 + l2.val if l2 else 0 + inhand
+        add_val = (l1.val if l1 else 0) + (l2.val if l2 else 0) + (inhand)
 
         
         curr.next = ListNode(int(str(add_val)[-1]))
@@ -23,9 +23,9 @@ def add_two_ll(l1,l2):
 
         l1 = l1.next if l1 else None
         l2 = l2.next if l2 else None
-        
+
     while inhand:
         curr.next = ListNode(int(str(inhand)[-1]))
         curr = curr.next
         inhand = int(str(inhand)[:-1]) if inhand > 9 else 0
-    return head
+    return head.next
