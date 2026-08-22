@@ -44,5 +44,5 @@ class queue:
        
     def is_transfer_needed(self):
         if not self.s2:
-            if self.s1:
+            while self.s1:
                 self.s2.append(self.s1.pop())
